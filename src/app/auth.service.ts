@@ -5,7 +5,8 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class AuthService {
-  user$: Observable<firebase.User>
+  // Todo write a User class
+  user$: Observable<firebase.User>;
 
   constructor(private afAuth: AngularFireAuth) {
     this.user$ = afAuth.authState;

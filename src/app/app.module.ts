@@ -57,16 +57,8 @@ import { AdminAuthGuard } from "./admin-auth-guard.service";
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
 
       // routes can be accessed only by admins
-      {
-        path: 'admin/products',
-        component: AdminProductsComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      },
-      {
-        path: 'admin/orders',
-        component: AdminOrdersComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      }
+      { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] }
     ])
   ],
   providers: [

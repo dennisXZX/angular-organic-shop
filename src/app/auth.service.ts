@@ -17,6 +17,7 @@ export class AuthService {
     private userService: UserService,
     private afAuth: AngularFireAuth,
     private route: ActivatedRoute) {
+    // get the current login state of the user
     this.user$ = afAuth.authState;
   }
 

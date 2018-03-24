@@ -6,14 +6,19 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item">
         <a class="nav-link" routerLink="/shopping-cart">Shopping Cart</a>
       </li>
+
+      <!-- display a login link if the user is not logged in -->
       <ng-template #anonymousUser>
         <li class="nav-item">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
       </ng-template>
+
+      <!-- display a menu if the user is logged in -->
       <li *ngIf="appUser; else anonymousUser" ngbDropdown class="nav-item dropdown">
         <a ngbDropdownToggle
            class="nav-link dropdown-toggle"
@@ -23,6 +28,7 @@
            aria-expanded="false">
           {{ appUser.name }}
         </a>
+
         <div ngbDropdownMenu class="dropdown-menu show" aria-labelledby="dropdown01">
           <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
           <ng-container *ngIf="appUser.isAdmin">
@@ -32,6 +38,7 @@
           <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </li>
+
     </ul>
   </div>
 </nav>
